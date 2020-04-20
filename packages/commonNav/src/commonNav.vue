@@ -34,7 +34,9 @@
             <BreadcrumbItem>{{protalTitle}}</BreadcrumbItem>
           </Breadcrumb>
           <div class="protal-content">
-            <router-view></router-view>
+            <router-view>
+              <slot name="viewContent"></slot>
+            </router-view>
           </div>
         </Content>
       </Layout>
@@ -44,16 +46,16 @@
 
 <script>
 /* eslint-disable */
-import { APP_MENU } from './utils/main'
+import { APP_MENU } from '../../../utils/main'
 export default {
-  name: 'AppLayout',
+  name: 'CommonNav',
 
   components: {
     MenuContent(resolve) {
-      require(['./components/Layout/MeunContent'], resolve)
+      require(['./Layout/MeunContent'], resolve)
     },
     MenuCollapsed(resolve) {
-      require(['./components/Layout/MenuCollapsed'], resolve)
+      require(['./Layout/MenuCollapsed'], resolve)
     }
   },
   computed: {
