@@ -1,7 +1,15 @@
 {
-  "name": "portal",
+  "name": "portal-vue-iview",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Merryhyl/portal.git"
+  },
+  "keywords": [
+    "portal"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -67,5 +75,15 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
-  }
+  },
+  "description": "## Project setup ``` npm install ```",
+  "bugs": {
+    "url": "https://github.com/Merryhyl/portal/issues"
+  },
+  "homepage": "https://github.com/Merryhyl/portal#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "license": "ISC"
 }
