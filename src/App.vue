@@ -1,19 +1,90 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="main-wrapper">
+    <Layout class="protal-menu">
+      <Sider hide-trigger :class="miniSider">
+        <div class="protal-logo logo-dark">
+          <span>Logo</span>
+          <span v-if="!isCollapsed" class="protal-title">| Title</span>
+        </div>
+        <component :is="menuComponent" :menuConfig="menuConfig"></component>
+      </Sider>
+      <Layout>
+        <Header class="protal-header">
+          <span class="header-trigger" @click="collapsedSider">
+            <Icon type="md-menu" :class="rotateIcon" />
+          </span>
+          <div class="protal-header-user">
+            <Dropdown placement="bottom-end">
+              <span>
+                {{username}}
+                <Icon type="ios-menu"></Icon>
+              </span>
+              <DropdownMenu slot="list">
+                <DropdownItem>{{email}}</DropdownItem>
+                <DropdownItem style="color: #ed4014" @click="logout">
+                  <span>退出登录</span>
+                  <Icon type="ios-arrow-forward" />
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+        </Header>
+        <Content>
+          <Breadcrumb class="protal-breadcrumb">
+            <BreadcrumbItem>{{protalTitle}}</BreadcrumbItem>
+          </Breadcrumb>
+          <div class="protal-content">
+            <router-view></router-view>
+          </div>
+        </Content>
+      </Layout>
+    </Layout>
   </div>
 </template>
 
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
-</style>
+<script>
+/* eslint-disable */
+import { APP_MENU } from './utils/main'
+export default {
+  name: 'AppLayout',
+
+  components: {
+    MenuContent(resolve) {
+      require(['./components/Layout/MeunContent'], resolve)
+    },
+    MenuCollapsed(resolve) {
+      require(['./components/Layout/MenuCollapsed'], resolve)
+    }
+  },
+  computed: {
+    miniSider() {
+      return [this.isCollapsed ? 'mini-sider' : '']
+    },
+    rotateIcon() {
+      return [this.isCollapsed ? 'rotate-icon' : '']
+    },
+    menuComponent() {
+      return this.isCollapsed ? 'MenuCollapsed' : 'MenuContent'
+    },
+    protalTitle() {
+      return this.$route.meta.title
+    }
+  },
+
+  data() {
+    return {
+      menuConfig: APP_MENU,
+      isCollapsed: false,
+      username: 'user',
+      email: 'user@123.com'
+    }
+  },
+
+  methods: {
+    collapsedSider() {
+      this.isCollapsed = !this.isCollapsed
+    },
+    logout() {}
+  }
+}
+</script>
