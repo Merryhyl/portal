@@ -50,7 +50,7 @@
 import 'view-design/dist/styles/iview.css'
 import '../../../static/common.styl'
 import { Layout, Sider, Breadcrumb, Dropdown, Content } from 'view-design'
-import { APP_MENU } from '../../../utils/main'
+// import { APP_MENU } from '../../../utils/main'
 export default {
   name: 'CommonNav',
 
