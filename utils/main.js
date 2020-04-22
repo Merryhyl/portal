@@ -4,29 +4,29 @@ export const APP_MENU = [
         key: 'home',
         name: '首页',
         icon: 'ios-home',
-        path: 'home',
+        path: '/home',
     },
     {
         key: 'scene',
         name: '导航1',
         icon: 'ios-briefcase',
-        path: 'scene',
+        path: '/scene',
     },
     {
         key: 'rules',
         name: '导航2',
         icon: 'ios-keypad-outline',
-        path: 'rules',
+        path: '/rules',
         children: [
             {
                 key: 'ruleconfig',
                 name: '导航2-1',
-                path: 'rules/rule'
+                path: '/rules/rule'
             },
             {
                 key: 'factorconfig',
                 name: '导航2-2',
-                path: 'rules/factor'
+                path: '/rules/factor'
             }
         ]
     },
@@ -34,22 +34,22 @@ export const APP_MENU = [
         key: 'punish',
         name: '导航3',
         icon: 'ios-settings',
-        path: 'punish',
+        path: '/punish',
         children: [
             {
                 key: 'packqge',
                 name: '导航3-1',
-                path: 'punish/package'
+                path: '/punish/package'
             },
             {
                 key: 'atom',
                 name: '导航3-2',
-                path: 'punish/atom'
+                path: '/punish/atom'
             },
             {
                 key: 'log',
                 name: '导航3-3',
-                path: 'punish/log'
+                path: '/punish/log'
             }
         ]
     },
@@ -57,17 +57,17 @@ export const APP_MENU = [
         key: 'check',
         name: '导航4',
         icon: 'ios-construct-outline',
-        path: 'check',
+        path: '/portal2/check',
         children: [
             {
                 key: 'notecheck',
                 name: '导航4-1',
-                path: 'punish/package'
+                path: '/portal2/check/notecheck'
             },
             {
                 key: 'usercheck',
                 name: '导航4-2',
-                path: 'punish/atom'
+                path: '/portal2/check/usercheck'
             }
         ]
 

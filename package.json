@@ -1,8 +1,8 @@
 {
   "name": "portal-vue-iview",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
-  "main": "main.js",
+  "main": "./packages/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Merryhyl/portal.git"

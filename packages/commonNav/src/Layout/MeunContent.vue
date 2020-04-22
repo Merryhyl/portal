@@ -23,7 +23,10 @@
 </template>
 <script>
 /* eslint-disable */
+import { Menu, MenuItem, Submenu } from 'view-design'
+
 export default {
+  components: { Menu, MenuItem, Submenu },
   props: {
     menuConfig: {
       type: Array,

@@ -49,7 +49,10 @@
 
 <script>
 /* eslint-disable */
+import { Dropdown, DropdownItem, Icon } from 'view-design'
+
 export default {
+  components: { Dropdown, DropdownItem, Icon },
   props: {
     menuConfig: {
       type: Array,

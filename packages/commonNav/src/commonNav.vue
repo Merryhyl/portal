@@ -34,9 +34,10 @@
             <BreadcrumbItem>{{protalTitle}}</BreadcrumbItem>
           </Breadcrumb>
           <div class="protal-content">
-            <router-view>
+            <slot name="viewContent"></slot>
+            <!-- <router-view>
               <slot name="viewContent"></slot>
-            </router-view>
+            </router-view>-->
           </div>
         </Content>
       </Layout>
@@ -46,11 +47,19 @@
 
 <script>
 /* eslint-disable */
+import 'view-design/dist/styles/iview.css'
+import '../../../static/common.styl'
+import { Layout, Sider, Breadcrumb, Dropdown, Content } from 'view-design'
 import { APP_MENU } from '../../../utils/main'
 export default {
   name: 'CommonNav',
 
   components: {
+    Layout,
+    Sider,
+    Breadcrumb,
+    Dropdown,
+    Content,
     MenuContent(resolve) {
       require(['./Layout/MeunContent'], resolve)
     },
